@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     import: DataTypes.BOOLEAN
   }, {});
   Plan.associate = function(models) {
-    // associations can be defined here
   };
   return Plan;
 };

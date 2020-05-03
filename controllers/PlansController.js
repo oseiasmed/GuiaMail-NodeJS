@@ -4,6 +4,11 @@ class PlansController {
 
         res.render("plans");
     }
+
+    create(req,res){
+
+        res.render("plans/create");
+    }
 }
 
 module.exports = new PlansController();
