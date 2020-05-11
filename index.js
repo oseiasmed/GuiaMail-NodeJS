@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const flash = require("connect-flash");
 
-//Router
+// Router
 const PlansRouter = require("./routes/PlansRouter");
 
 // View engine
@@ -15,14 +16,17 @@ app.use(session({
     resave: true
 }))
 
+app.use(flash());
+
 app.use(express.static('public'));
 
 //Body parser
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+ 
+// Routes
 
 app.use("/",PlansRouter);
-
 
 // Router
 

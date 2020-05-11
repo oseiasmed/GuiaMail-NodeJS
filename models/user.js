@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     role: DataTypes.INTEGER
   }, {});
   User.associate = function(models) {
-   };
+    User.belongsTo(models.Plan);
+  };
   return User;
 };
